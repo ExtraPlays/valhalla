@@ -17,7 +17,7 @@ RegisterServerEvent("valhalla:joinRoom")
 AddEventHandler("valhalla:joinRoom", function(roomID)
   local playerId = source
   local room = getRoom(roomID)
-  -- Check if room exists
+  
   if room then
     -- verifica se a sala está cheia de jogadores e envia um evento para o cliente
     if #room.players >= room.maxPlayers then
@@ -67,6 +67,7 @@ AddEventHandler("valhalla:playerKilled", function(roomID, killerId, victimId)
   -- verifica se a sala existe
   if not room then return end
 
+  -- verifica se o jogador tem algum abate e soma, se não tiver inicializa com 1
   if room.kills[killerId] then
     room.kills[killerId] = room.kills[killerId] + 1
   else
@@ -99,7 +100,7 @@ AddEventHandler("valhalla:playerKilled", function(roomID, killerId, victimId)
     end
   end
 
-  -- verifica se o jogo acabou
+  -- verifica se o jogo acabou (mover para o roundover)
   if room.round >= room.maxRounds then
     room.status = "gameOver"
     -- envia um evento para todos os jogadores na sala
@@ -138,6 +139,7 @@ AddEventHandler("valhalla:startGame", function(roomID)
         TriggerClientEvent('gameStarted', player, roomID)
       end
     else
+      -- Envia um evento para todos os jogadores na sala notificando-os de que não tem players suficientes 
       for _, player in ipairs(room.players) do
         TriggerClientEvent('notEnoughPlayers', player)
       end
