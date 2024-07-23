@@ -1,0 +1,1 @@
+-- todo: implementacoes de comunicacao com o servidor
