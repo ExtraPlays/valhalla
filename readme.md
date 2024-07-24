@@ -1,5 +1,7 @@
 # Valhalla
 
+Script para servidor PVP
+
 ## Sobre
 
 Este projeto implementa um sistema de jogo multiplayer baseado em equipes com mapas específicos, como "praça" e "bebidas". Os jogadores podem criar salas, juntar-se a elas, competir em rodadas e ter suas pontuações e abates registrados.
