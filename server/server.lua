@@ -115,6 +115,15 @@ AddEventHandler("valhalla:playerKilled", function(roomID, killerId, victimId)
   end
 end)
 
+RegisterServerEvent("valhalla:roundOver")
+AddEventHandler("valhalla:roundOver", function(roomID)
+  local room = getRoom(roomID)
+
+  if room then
+    -- todo: verificar se o jogo acabou e enviar um evento para todos os jogadores na sala
+  end
+end)
+
 RegisterServerEvent("valhalla:startGame")
 AddEventHandler("valhalla:startGame", function(roomID)
   local room = getRoom(roomID)
@@ -146,6 +155,8 @@ AddEventHandler("valhalla:startGame", function(roomID)
     end
   end
 end)
+
+
 
 function getRoom(id)
   return rooms[id]
