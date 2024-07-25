@@ -1,7 +1,7 @@
 # Valhalla
 
 ![image](https://i.imgur.com/JBuv1zs.png)
-<img src="(https://i.imgur.com/JBuv1zs.png)" alt="drawing" width="200"/>
+<img src="https://i.imgur.com/JBuv1zs.png" alt="Logo Valhalla" width="200"/>
 
 Script para servidor PVP
 
